@@ -2,7 +2,17 @@ import React from 'react'
 
 function Cart() {
   return (
-    <div>Cart</div>
+    <div>
+
+{/* const add = (newAdd) => {
+    setPeople([
+        ...people,
+        newPeople
+    ]);
+}
+ */}
+
+    </div>
   )
 }
 
