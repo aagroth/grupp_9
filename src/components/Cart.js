@@ -1,8 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Cart() {
+
   return (
-    <div>Cart</div>
+    <nav>
+      <Link to="/">Products</Link> / <Link to="/Checkout">Checkout</Link>
+    </nav>
   )
 }
 

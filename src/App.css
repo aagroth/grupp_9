@@ -1,0 +1,9 @@
+#card{
+    background-color: lightcyan;
+    color: blue;
+    width: 20%;
+    border: 2px solid darkblue;
+    padding: 5%;
+    text-align: center;
+    justify-content: space-between;
+}

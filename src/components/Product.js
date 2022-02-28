@@ -1,11 +1,14 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Products from '../pages/Products'
 
-function Product({product}) {
+function Product({ product }) {
   return (
     <div>
-        <Link to={`/products/${product.id}`}><h1>{product.title}</h1></Link>
+      <Link to={`/products/${product.id}`}><h1>{product.title}</h1></Link>
+      
     </div>
+    
   )
 }
 
