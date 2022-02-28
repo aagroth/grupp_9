@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import Product from '../components/Product'
-import { useNavigate } from 'react-router-dom';
-
-
+import { Link } from 'react-router-dom'
+import Styling from './Products.module.css'
 
 function Products() {
 
-  const navigate = useNavigate();
   const [productList, setProductList] = useState([]);
 
   const fetchData = async () => {
@@ -26,63 +23,27 @@ function Products() {
     fetchData();
   }, [])
 
-
-  const addToCart = () => {
-  navigate('/Nav') //ska läggas till i en tom array i nav????
-}
-
-const toProduct = () => {
-/*     if (products.id === products.id){
-      {products.title} {products.description} {products.price} {products.storage}
-      navigate('/Product');
-    } else{
-      alert: "Sorry, this item is unavailable."
-    }  */
-navigate('../pages/Product');
+  function addToCart() {
+    alert('ADDED TO CART')
   }
 
-return (
-  <div id="parentArticle">
-    {
-      productList.map((products) => (
-        <article key={products.id}>
-          <img src={products.url} alt={products.title}></img>
-          <h3> {products.title} </h3>
-          <p>{products.price} :- </p>
-          <button onClick={toProduct}> Show more ... </button>
-          <br />
-          <button onClick={addToCart}> ADD TO CART </button>
-        </article >
+  return (
+    <div id={Styling.parentArticle}>
+      {
+        productList.map((products) => (
+          <article key={products.id}>
+            <img src={products.url} alt={products.title}></img>
+            <p>{products.title} </p>
+            <p>{products.price} :- </p>
+            <br />
+            <Link to={`/products/${products.id}`}><button>Till produkt</button></Link>
+            <br />
+            <button onClick={addToCart}> ADD TO CART </button>
+          </article>
 
-      ))}
+        ))}
 
-  </div>
-)
+    </div>
+  )
 }
-
 export default Products
-
-
-/* productList.map((products) => (
-  <article id="card">
-    key = {products.id}
-    TITLE - {products.title}
-    ID - {products.id}
-    DESCRIPTION - {products.description}
-    PRICE - {products.price}
-    STORAGE - {products.storage}
-  </article >  */
-
-/*
-const handleSubmit = (e) => {
-  e.preventDefault();
-
-    const addToCartList = {
-     id: id,
-     title: title,
-     description: description,
-     price: price,
-     storage: storage
-   }
-   AddToCartBtn(addToCartList) 
-} */

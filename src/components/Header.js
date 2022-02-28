@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Products from '../pages/Products'
 import { FaShoppingBasket } from 'react-icons/fa'
+import Styling from './Header.module.css'
 
 
 function Header() {
@@ -9,15 +9,15 @@ function Header() {
 
     return (
         <nav>
-            <div className="nav_box">
-                <span className='my_box'>
+            <div className={Styling.nav_box}>
+                <span className={Styling.links}>
                     <Link to="/">Products</Link> / <Link to="/Checkout">Checkout</Link>
                 </span>
-                <div className="cart">
-                    <span className='cart one'>
+                <div>
+                    <span className={Styling.one}>
                         <FaShoppingBasket />
                     </span>
-                    <span className='cart two'>
+                    <span className={Styling.two}>
                         0
                     </span>
                 </div>
