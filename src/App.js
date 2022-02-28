@@ -13,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      {/* HEADER */}
       <Nav />
         <Routes>
           <Route path="/products/:id" element={<Product />} />

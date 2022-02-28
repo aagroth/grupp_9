@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-//import { Link } from 'react-router-dom'
 import Product from '../components/Product'
+import { useNavigate } from 'react-router-dom';
 
 
 
 function Products() {
-  /*   const [add, setAddToCart] = useState([]); */
+
+  const navigate = useNavigate();
   const [productList, setProductList] = useState([]);
 
   const fetchData = async () => {
@@ -26,46 +27,39 @@ function Products() {
   }, [])
 
 
-
-  /*   const handleChange = (e) => {
-      setAddToCart(e.target.value);
-    } */
-
-
-  function addToCart() {
-    alert('ADDED TO CART')
-  }
-
-  function toProduct () {
-
-    console.log(Product)
-  }
-
-
-  return (
-    <div>
-      {/*       <nav>
-        <Link to="/">Products</Link> / <Link to="/Checkout">Checkout</Link>
-      </nav> */}
-
-      <h1>Product List: </h1>
-      {
-        productList.map((products) => (
-          <article key={products.id}>
-            <p> TITLE - {products.title} </p>
-            <p>ID - {products.id}</p>
-            <p>DESCRIPTION - {products.description}</p>
-            <p>PRICE - {products.price}</p>
-            <p>STORAGE - {products.storage}</p>
-            <button onClick={addToCart}> ADD TO CART </button>
-            <button onClick={toProduct}> Visa mer... </button>
-          </article >
-
-        ))}
-
-    </div>
-  )
+  const addToCart = () => {
+  navigate('/Nav') //ska läggas till i en tom array i nav????
 }
+
+const toProduct = () => {
+/*     if (products.id === products.id){
+      {products.title} {products.description} {products.price} {products.storage}
+      navigate('/Product');
+    } else{
+      alert: "Sorry, this item is unavailable."
+    }  */
+navigate('../pages/Product');
+  }
+
+return (
+  <div id="parentArticle">
+    {
+      productList.map((products) => (
+        <article key={products.id}>
+          <img src={products.url} alt={products.title}></img>
+          <h3> {products.title} </h3>
+          <p>{products.price} :- </p>
+          <button onClick={toProduct}> Show more ... </button>
+          <br />
+          <button onClick={addToCart}> ADD TO CART </button>
+        </article >
+
+      ))}
+
+  </div>
+)
+}
+
 export default Products
 
 
