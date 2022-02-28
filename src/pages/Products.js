@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-//import { Link } from 'react-router-dom'
-/* import ProductList from '../components/ProductList'; */
-/* import AddToCartBtn from '../components/AddToCartBtn'; */
+import { Link } from 'react-router-dom'
+import Product from '../components/Product'
+
 
 
 function Products() {
@@ -37,7 +37,8 @@ function Products() {
   }
 
   function toProduct () {
-    <link to="/Cart"></link>
+
+    console.log(Product)
   }
 
 
