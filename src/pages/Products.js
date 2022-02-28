@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from 'react'
+//import { Link } from 'react-router-dom'
 /* import ProductList from '../components/ProductList'; */
-import AddToCartBtn from '../components/AddToCartBtn';
+/* import AddToCartBtn from '../components/AddToCartBtn'; */
 
 
 function Products() {
-/*   const [add, setAddToCart] = useState([]); */
-
+  /*   const [add, setAddToCart] = useState([]); */
   const [productList, setProductList] = useState([]);
+
   const fetchData = async () => {
     try {
       const response = await fetch('https://codexplained.se/sportstuff.php');
       const data = await response.json();
-      console.log(data);
       setProductList(data);
+
+      console.log(data);
 
     } catch (error) {
       console.log(error);
     }
   }
-
 
   useEffect(() => {
     fetchData();
@@ -26,58 +27,44 @@ function Products() {
 
 
 
-
-
-/*  const handleChange = (e) => {
+  /*   const handleChange = (e) => {
       setAddToCart(e.target.value);
-  } */
+    } */
 
 
+  function addToCart() {
+    alert('ADDED TO CART')
+  }
 
-
-/*   const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const addToCartList ={
-      id: id,
-      title: title,
-      description: description,
-      price: price,
-      storage: storage
-    }
-    AddToCartBtn(addToCartList)
-  } */
-  
-
+  function toProduct () {
+    <link to="/Cart"></link>
+  }
 
 
   return (
     <div>
+      {/*       <nav>
+        <Link to="/">Products</Link> / <Link to="/Checkout">Checkout</Link>
+      </nav> */}
+
       <h1>Product List: </h1>
       {
-
         productList.map((products) => (
-          <article id="card">
-           <p> key - {products.id} </p>
-           <p> TITLE - {products.title}</p>
-           <p> ID - {products.id}</p>
-           <p> DESCRIPTION - {products.description}</p>
-           <p> PRICE - {products.price}</p>
-           <p> STORAGE - {products.storage}</p>
-
-{/*             <form onSubmit={handleSubmit}>
-              <input type="text" value={add} onChange={handleChange} />
-              <button> ADD TO CART </button>
-            </form> */}
+          <article key={products.id}>
+            <p> TITLE - {products.title} </p>
+            <p>ID - {products.id}</p>
+            <p>DESCRIPTION - {products.description}</p>
+            <p>PRICE - {products.price}</p>
+            <p>STORAGE - {products.storage}</p>
+            <button onClick={addToCart}> ADD TO CART </button>
+            <button onClick={toProduct}> Visa mer... </button>
           </article >
-        ))
-      }
 
+        ))}
 
-    </div >
+    </div>
   )
 }
-
 export default Products
 
 
@@ -89,4 +76,18 @@ export default Products
     DESCRIPTION - {products.description}
     PRICE - {products.price}
     STORAGE - {products.storage}
-  </article > */
+  </article >  */
+
+/*
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+    const addToCartList = {
+     id: id,
+     title: title,
+     description: description,
+     price: price,
+     storage: storage
+   }
+   AddToCartBtn(addToCartList) 
+} */

@@ -1,18 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Cart() {
+
   return (
-    <div>
-
-{/* const add = (newAdd) => {
-    setPeople([
-        ...people,
-        newPeople
-    ]);
-}
- */}
-
-    </div>
+    <nav>
+      <Link to="/">Products</Link> / <Link to="/Checkout">Checkout</Link>
+    </nav>
   )
 }
 

@@ -1,9 +1,13 @@
-import React from 'react'
+/* import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Header() {
+
   return (
-    <div>Header</div>
+    <nav>
+      <Link to="/">Products</Link> / <Link to="/Checkout">Checkout</Link>
+    </nav>
   )
 }
 
-export default Header
+export default Header */

@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+/* import React, { useState } from 'react'
 
 
-function AddToCartBtn({ AddToCartBtn }) {
+function AddToCartBtn({ AddToCartBtnList }) {
     const addToCart = [];
     const [add, setAddToCart] = useState(addToCart);
 
@@ -13,22 +13,22 @@ function AddToCartBtn({ AddToCartBtn }) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const addToCartList = {
+        addToCart = (
             id: id,
             title: title,
             description: description,
             price: price,
             storage: storage
-        }
-        AddToCartBtn(addToCartList)
+        )
+        AddToCartBtnList (addToCartList)
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form id='formCartBtn' onSubmit={handleSubmit}>
             <input type="text" value={add} onChange={handleChange} />
             <button> ADD TO CART </button>
         </form>
     )
 }
 
-export default AddToCartBtn
+export default AddToCartBtn */
