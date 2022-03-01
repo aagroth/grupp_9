@@ -27,18 +27,21 @@ function Products() {
     alert('ADDED TO CART')
   }
 
+
+
   return (
     <div id={Styling.parentArticle}>
       {
         productList.map((products) => (
           <article key={products.id}>
             <img src={products.url} alt={products.title}></img>
-            <p>{products.title} </p>
-            <p>{products.price} :- </p>
-            <br />
-            <Link to={`/products/${products.id}`}><button>Till produkt</button></Link>
-            <br />
-            <button onClick={addToCart}> ADD TO CART </button>
+            <p className={Styling.pClass}>{products.title} </p>
+            <p className={Styling.pClass}>{products.price} :- </p>
+            
+            <Link to={`/products/${products.id}`}><button className={Styling.addToCartBtn}>Read more .. </button></Link>
+            <br/>
+            <button className={Styling.addToCartBtn} onClick={addToCart}> ADD TO CART </button>
+          
           </article>
 
         ))}
