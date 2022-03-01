@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaShoppingBasket } from 'react-icons/fa'
 import Styling from './Header.module.css'
+import cart from '../pages/Products'
 
 
-function Header() {
-    const cartList = [];
+function Header(props) {
 
     return (
         <nav>
@@ -14,11 +14,11 @@ function Header() {
                     <Link to="/">Products</Link>     <Link to="/Checkout">Checkout</Link>
                 </span>
                 <div>
-                    <span className={Styling.one}>
+                    <span className={Styling.shoppingBagOne}>
                         <FaShoppingBasket />
                     </span>
-                    <span className={Styling.two}>
-                        0
+                    <span className={Styling.shoppinBagTwo}>
+                        {cart.length}
                     </span>
                 </div>
             </div>
