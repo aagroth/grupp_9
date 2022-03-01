@@ -1,12 +1,12 @@
 import React from 'react'
-import Styling from '../components/Footer.module.css'
+import styled from 'styled-components';
 
 function Footer() {
   return (
-    <div>
+    <StyledContainer>
       
       <section>
-        <h2 className={Styling.titleText}>Kontakta oss</h2>
+        <h2>Kontakta oss</h2>
         <p>Telefon: 08-0000000</p>
         <p>Mail: kontakt@mail.se</p>
         <p>Södervägen 12 A, Stockholm</p>
@@ -19,8 +19,18 @@ function Footer() {
         <p>Vanliga frågor</p>
       </section>
 
-    </div>
+    </StyledContainer>
   )
 }
 
 export default Footer
+
+// Styled components for Footer
+
+const StyledContainer = styled.div`
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
+margin-top: 30px;
+border-top: 3px solid darkblue;
+`;
