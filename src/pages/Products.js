@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Styling from './Products.module.css'
 
 function Products() {
-  
+
   const [productList, setProductList] = useState([]);
 
   const fetchData = async () => {
@@ -26,20 +27,21 @@ function Products() {
     alert('ADDED TO CART')
   }
 
-  return (
-    <div>
 
-      <h1>Product List:</h1>
+
+  return (
+    <div id={Styling.parentArticle}>
       {
         productList.map((products) => (
           <article key={products.id}>
-            <p>TITLE - {products.title} </p>
-            <p>ID - {products.id}</p>
-            <p>DESCRIPTION - {products.description}</p>
-            <p>PRICE - {products.price}</p>
-            <p>STORAGE - {products.storage}</p>
-            <button onClick={addToCart}> ADD TO CART </button>
-            <Link to={`/products/${products.id}`}><button>Till produkt</button></Link>
+            <img src={products.url} alt={products.title}></img>
+            <p className={Styling.pClass}>{products.title} </p>
+            <p className={Styling.pClass}>{products.price} :- </p>
+            
+            <Link to={`/products/${products.id}`}><button className={Styling.addToCartBtn}>Read more .. </button></Link>
+            <br/>
+            <button className={Styling.addToCartBtn} onClick={addToCart}> ADD TO CART </button>
+          
           </article>
 
         ))}
