@@ -5,7 +5,7 @@ import Styling from './Header.module.css'
 import cart from '../pages/Products'
 
 
-function Header(props) {
+function Header() {
 
     return (
         <nav>
@@ -13,17 +13,30 @@ function Header(props) {
                 <span className={Styling.links}>
                     <Link to="/">Products</Link>     <Link to="/Checkout">Checkout</Link>
                 </span>
-                <div>
+                 <div>
                     <span className={Styling.shoppingBagOne}>
                         <FaShoppingBasket />
-                    </span>
+                    </span> 
                     <span className={Styling.shoppinBagTwo}>
                         {cart.length}
                     </span>
-                </div>
+                </div> 
             </div>
         </nav>
     )
 }
 
 export default Header
+
+
+/* 
+  const addToCart = (products) => {
+    setCart([...cart, products]);
+    console.log(cart)
+  };
+  
+  <button className={Styling.addToCartBtn} onClick={() => addToCart(products)}> ADD TO CART </button>
+  
+  
+  
+  */
