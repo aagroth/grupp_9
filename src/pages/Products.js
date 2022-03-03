@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+/* import { Link } from 'react-router-dom' */
+import ProductsChild from '../components/ProductsChild';
 import Styling from './Products.module.css'
 
 
@@ -26,16 +27,10 @@ function Products() {
 
   return (
       <div id={Styling.parentArticle}>
-      {productList.map((products) => (
-        <article key={products.id}>
-          <img src={products.url} alt={products.title}></img>
-          <p className={Styling.pClass}>{products.title} </p>
-          <p className={Styling.pClass}>{products.price} :- </p>
+      {productList.map(products => <ProductsChild key={products.id} products={products} />
+      )}
+          
 
-          <Link to={`/products/${products.id}`}><button className={Styling.addToCartBtn}>Read more .. </button></Link>
-          <button className={Styling.addToCartBtn}> ADD TO CART </button>
-        </article>
-      ))}
     </div>
   )
 }
@@ -48,6 +43,16 @@ export default Products
         <button> Go to CART {cart.length}</button>
       </header>
       
-      
+
+
+
+
+      <img src={products.url} alt={products.title}></img>
+          <p className={Styling.pClass}>{products.title} </p>
+          <p className={Styling.pClass}>{products.price} :- </p>
+
+          <Link to={`/products/${products.id}`}><button className={Styling.addToCartBtn}>Read more .. </button></Link>
+          <button className={Styling.addToCartBtn}> ADD TO CART </button>
+        </article>
       
       */
