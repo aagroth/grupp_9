@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom'
 import { FaShoppingBasket } from 'react-icons/fa'
 import Styling from './Header.module.css'
 
-function Header({ tasks, setTask, products }) {
+function Header({ tasks, setTasks }) {
 
     function showShoppingBag(e) {
         e.target.style.background = "green";
 
-        const shoppingList = tasks.map(task => (
-            showShoppingBag === true && task.id === products.id
-                ? <p>{task.url}{task.title}{task.price}</p>
-                : ''
+        const shoppingList = tasks.map((task) => (
+            showShoppingBag =
+                <p>{task.url}{task.title}{task.price}</p>
+                
         ))
-            setTask(shoppingList)
+            setTasks(shoppingList)
     }
 
     function dontShowShoppingBag(e) {
