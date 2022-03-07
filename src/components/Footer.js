@@ -1,19 +1,20 @@
 import React from 'react'
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 function Footer() {
   return (
     <StyledContainer>
       
       <section>
-        <h2>Kontakta oss</h2>
+        <motion.h2 initial={{ x: 0 }} whileHover={{ x: 100 }}>Kontakta oss</motion.h2>
         <p>Telefon: 08-0000000</p>
         <p>Mail: kontakt@mail.se</p>
         <p>Södervägen 12 A, Stockholm</p>
       </section>
 
       <section>
-        <h2>Info</h2>
+      <motion.h2 initial={{ x: 0 }} whileHover={{ x: 100 }}>Info</motion.h2>
         <p>Köpvillkor</p>
         <p>Leveransvillkor</p>
         <p>Vanliga frågor</p>
