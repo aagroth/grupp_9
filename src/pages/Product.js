@@ -24,6 +24,11 @@ function Product() {
   
   return (
     <div>
+    
+    </div>
+    
+    
+    /* <div>
       <h1>A specific product with id {params.id}</h1>
       <img src={product.url} alt={product.title}></img>
       <p>{product.title}</p>
@@ -31,7 +36,7 @@ function Product() {
       <p>{product.description}</p>
       <p>{product.storage}</p>
       <button>Add to cart</button>
-    </div>
+    </div> */
   )
 }
 
