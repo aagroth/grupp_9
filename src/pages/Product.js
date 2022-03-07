@@ -20,7 +20,8 @@ function Product(props) {
   };
 
   useEffect( () => {
-    fetchData();
+    
+    fetchData()
 }, []);
 
 const handleSubmit = (e) => {
@@ -37,7 +38,7 @@ const handleSubmit = (e) => {
 }
   
   return (
-<div className={Styling.productCard}>
+<div className={Styling.productCard} >
     
     <div className={Styling.imgContainer}>
       <img src={product.url} alt={product.title}></img>
@@ -67,7 +68,7 @@ const handleSubmit = (e) => {
       </details>
 
       <form onSubmit={handleSubmit} className={Styling.quantityContainer}>
-        <input type="number" fname="Quantity" placeholder="Quantity"></input>
+        <input type="number" placeholder="Quantity"></input>
         <button className={Styling.submitBtn}>ADD TO CART</button>
       </form>
     </div>
