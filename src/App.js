@@ -12,18 +12,13 @@ import Header from './components/Header';
 function App() {
   const [tasks, setTasks] = useState([]); //tom lista för varukorg
 
-  const newProduct = {
-    id: Products.url,
-    img: Products.url,
-    title: Products.title,
-    price: Products.price
-  }
 
-  
+  const addProduct = (newProduct) => {
   setTasks([
     ...tasks, //en syssla i taget
     newProduct
-  ])
+  ]);
+}
 
 
   return (
