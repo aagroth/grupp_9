@@ -1,24 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaShoppingBasket } from 'react-icons/fa'
 import Styling from './Header.module.css'
+import Cart from './Cart'
 
-function Header({ tasks, setTasks }) {
+function Header(props) {
 
-    function showShoppingBag(e) {
-        e.target.style.background = "green";
-
-        const shoppingList = tasks.map((task) => (
-            showShoppingBag === <p>{task.url}{task.title}{task.price}</p>
-        ))
-            setTasks(shoppingList)
-            console.log(shoppingList)
-    }
-
-    function dontShowShoppingBag(e) {
-        e.target.style.background = ""
-    }
-
+    
 
     return (
         <div>
@@ -27,17 +14,12 @@ function Header({ tasks, setTasks }) {
                     <span className={Styling.links}>
                         <Link to="/">Products</Link>     <Link to="/Checkout">Checkout</Link>
                     </span>
-                    <div>
-                        <span className={Styling.shoppingBagOne}>
-                            <FaShoppingBasket onMouseOver={showShoppingBag} onMouseLeave={dontShowShoppingBag} />
-
-                        </span>
-                        <span className={Styling.shoppinBagTwo}>
-                            {/* {tasks.length} */}
-                        </span>
-                    </div>
+                    <span>
+                    <Cart tasks={props.tasks} setTasks={props.setTasks} addProduct={props.addProduct} />
+                    </span>
                 </div>
             </nav>
+            
         </div>
     )
 }

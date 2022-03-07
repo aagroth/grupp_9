@@ -1,0 +1,37 @@
+.Dropdown { /*  HELA  dropdown*/
+    position: relative;
+    display: inline-block;
+  }
+  
+  .showShoppingBag{ /*  STYLING VID ICONEN  dropbtn*/
+    background-color: lightblue;
+    color: white;
+    padding: 26px;
+    border: none;
+    cursor: pointer;
+}
+
+.cartList{ /* STYLING PÅ LISTAN SOM SKAPAS dropdown-content*/
+    display: none;
+    position: absolute; 
+    background-color: lightblue;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    display: block;
+    width: 300px;
+    z-index: 1;
+
+}
+
+.picList{
+    width: 40px;
+    height: 40px;
+}
+
+
+
+.Dropdown:hover .dropdown-content { /*  STYLING VID HOVER */
+    display: block;
+    padding: 5%;
+  }
+
+

@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import Styling from './Products.module.css'
 import ProductsChild from '../components/ProductsChild';
 
-
-
 function Products(props) {
   const [productList, setProductList] = useState([]); //befinliga med API
 
