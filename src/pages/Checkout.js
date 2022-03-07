@@ -2,11 +2,10 @@ import React from 'react'
 
 function Checkout(props) {
 
-
-
   return (
   <div> 
 
+  {props.tasks.map((checkoutItem) => (
     <table>    
       <tr>
         <th colspan="4">Products</th>
@@ -18,28 +17,29 @@ function Checkout(props) {
         <th>Price</th>
       </tr>
       <tr>
-        <td>Image of product</td>
-        <td>A test title</td>
+        <img src={checkoutItem.url} alt={checkoutItem.title}></img>
+        <td>{checkoutItem.title}</td>
         <td>Qty of products</td>
-        <td>100</td>
+        <td>{checkoutItem.price}</td>
       </tr>
     </table>
+  ))}
 
-    <table>
-      <tr>
-        <th>Summa</th>
-        <td>100</td>
-      </tr>
-      <tr>
-        <th>Frakt</th>
-        <td>0</td>
-      </tr>
-      <tr>
-        <th>Total</th>
-        <td>100</td>
-      </tr>
-    </table>
-
+  <table>
+    <tr>
+      <th>Summa</th>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>Frakt</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Total</th>
+      <td>100</td>
+    </tr>
+  </table>
+    
     <button>Place order</button>
 
   </div>
