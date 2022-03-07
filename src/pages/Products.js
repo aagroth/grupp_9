@@ -20,7 +20,7 @@ function Products(props) {
 
   useEffect(() => {
     fetchData();
-  }, [])
+  }, []);
 
   return (
       <div id={Styling.parentArticle}>
