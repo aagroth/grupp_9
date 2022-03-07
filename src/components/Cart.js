@@ -24,12 +24,13 @@ function Cart({ tasks }) {
               {task.title}{task.price} :-
               <span className={Styling.toCheckout}>
                 <br />
-                <Link to="/Checkout">Go to checkout</Link>    <button className={deleteAll}> DELETE </button>
+                  <button className={deleteAll}> DELETE </button>
               </span>
               </div>))
           : null
         }
-    </div >
+        <Link to="/Checkout">Go to checkout</Link>
+    </div>
   )
 }
 export default Cart

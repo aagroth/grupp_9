@@ -8,7 +8,7 @@ function Checkout(props) {
   {props.tasks.map((checkoutItem) => (
     <table>    
       <tr>
-        <th colspan="4">Products</th>
+        <th colSpan="4">Products</th>
       </tr>
       <tr>
         <th>Img</th>
