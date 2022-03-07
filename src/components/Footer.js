@@ -35,4 +35,6 @@ margin-top: 30px;
 border-top: 3px solid #FED766;
 background-color: #272727;
 color: white;
+padding-top: 50px;
+padding-bottom: 50px;
 `;

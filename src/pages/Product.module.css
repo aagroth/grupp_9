@@ -1,0 +1,44 @@
+.productCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.imgContainer {
+    margin-right: 100px;
+}
+
+.infoContainer {
+    margin-right: 100px;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.innerContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.quantityContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.detailInfo {
+
+}
+
+.submitBtn {
+
+}
