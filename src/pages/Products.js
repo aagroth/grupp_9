@@ -7,6 +7,8 @@ function Products(props) {
   const [productList, setProductList] = useState([]); //befinliga med API
 
 
+
+
   const fetchData = async () => {
     try {
       const response = await fetch('https://codexplained.se/sportstuff.php');
@@ -25,7 +27,7 @@ function Products(props) {
 
   return (
       <div id={Styling.parentArticle}>
-      {productList.map(products => <ProductsChild key={products.id} products={products} addProduct={props.addProduct}/>
+      {productList.map(products => <ProductsChild key={products.id} products={products} addProduct={props.addProduct} task={props.task} removeFromCart={props.removeFromCart}/>
       )}
     </div>
   )

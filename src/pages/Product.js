@@ -19,10 +19,9 @@ function Product(props) {
     }
   };
 
-  useEffect( () => {
-    
-    fetchData()
-}, []);
+  useEffect(() => {
+    fetchData();
+  }, [] );
 
 const handleSubmit = (e) => {
   e.preventDefault();

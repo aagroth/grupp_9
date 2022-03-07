@@ -4,7 +4,7 @@ import Styling from './Cart.module.css'
 import { Link } from 'react-router-dom'
 
 
-function Cart({ tasks }) {
+function Cart({ task }) {
   const [showShoppingBag, setShoppingBag] = useState(true)
 
   const deleteAll = () => {
@@ -14,23 +14,21 @@ function Cart({ tasks }) {
   return (
     <div className={Styling.Dropdown}>
       <FaShoppingBasket onClick={() => setShoppingBag(!showShoppingBag)} className={Styling.showShoppingBag} />
-        <div className={Styling.shoppinBagTwo}> {showShoppingBag.length} </div>
-        
+      <span className={Styling.shoppinBagTwo}> {showShoppingBag.length}4 </span>
       {
         showShoppingBag
-          ? tasks.map(task => (
-            <div className={Styling.cartList} key={task.id}>
-              <img className={Styling.picList} src={task.url} alt={task.title}></img>
-              {task.title}{task.price} :-
-              <span className={Styling.toCheckout}>
-                <br />
-                  <button className={deleteAll}> DELETE </button>
-              </span>
-              </div>))
+          ? /* tasks.map(task => ( */
+          <div className={Styling.cartList} key={task.id}>
+            <img className={Styling.picList} src={task.url} alt={task.title}></img>
+            {task.title}{task.price} :-
+            <span className={Styling.toCheckout}>
+              <br />
+              <Link to="/Checkout">Go to checkout</Link>    <button className={deleteAll}> DELETE </button>
+            </span>
+          </div>/* )) */
           : null
-        }
-        <Link to="/Checkout">Go to checkout</Link>
-    </div>
+      }
+    </div >
   )
 }
 export default Cart
