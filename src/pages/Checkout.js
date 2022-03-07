@@ -6,13 +6,13 @@ function Checkout(props) {
 
   console.log(product)
   
-  const testProducts = {
+/*   const testProducts = {
     
     img: 'Image',
     title: 'Product1',
     price: '100' 
 
-  }
+  } */
 
   return (
   <div> 

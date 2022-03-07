@@ -9,9 +9,7 @@ function Header({ tasks, setTasks }) {
         e.target.style.background = "green";
 
         const shoppingList = tasks.map((task) => (
-            showShoppingBag =
-                <p>{task.url}{task.title}{task.price}</p>
-                
+            showShoppingBag === <p>{task.url}{task.title}{task.price}</p>
         ))
             setTasks(shoppingList)
     }
