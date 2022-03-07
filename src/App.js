@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header tasks={tasks} setTasks={setTasks} />
+        <Header tasks={tasks} setTasks={setTasks} addProduct={addProduct} />
 
 
         <Routes>
