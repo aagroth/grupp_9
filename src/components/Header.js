@@ -12,6 +12,7 @@ function Header({ tasks, setTasks }) {
             showShoppingBag === <p>{task.url}{task.title}{task.price}</p>
         ))
             setTasks(shoppingList)
+            console.log(shoppingList)
     }
 
     function dontShowShoppingBag(e) {
@@ -77,4 +78,16 @@ export default Header
                                 :''
                             }
   
+
+
+
+                                function showShoppingBag(e) {
+        e.target.style.background = "green";
+
+        const shoppingList = tasks.map((task) => (
+            showShoppingBag === <p>{task.url}{task.title}{task.price}</p>
+        ))
+            setTasks(shoppingList)
+            console.log(shoppingList)
+    }
   */

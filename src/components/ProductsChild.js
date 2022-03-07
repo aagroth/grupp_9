@@ -1,22 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import Styling from './ProductsChild.module.css'
-import Products from '../pages/Products'
+
 
 function ProductsChild(props) {
      
-
  const handleSubmit = (e) => {
         e.preventDefault();
 
         const newProduct = {
-            id: Products.url,
-            img: Products.url,
-            title: Products.title,
-            price: Products.price
+            id: props.products.id,
+            img: props.products.url,
+            title: props.products.title,
+            price: props.products.price
           }
         props.addProduct(newProduct);
+        console.log(newProduct)
     }
+
+
 
 
     return (

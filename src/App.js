@@ -9,6 +9,7 @@ import Header from './components/Header';
 
 
 
+
 function App() {
   const [tasks, setTasks] = useState([]); //tom lista för varukorg
 
@@ -26,11 +27,10 @@ function App() {
       <BrowserRouter>
         <Header tasks={tasks} setTasks={setTasks} addProduct={addProduct} />
 
-
         <Routes>
           <Route path="/products/:id" element={<Product />} />
-          <Route path="/" element={<Products />} />
-          <Route path="/Checkout" element={<Checkout />} />
+          <Route path="/" element={<Products addProduct={addProduct} />} />
+          <Route path="/Checkout" element={<Checkout tasks={tasks} setTasks={setTasks} addProduct={addProduct} />} />
         </Routes>
 
         <Footer />

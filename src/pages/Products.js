@@ -3,7 +3,8 @@ import Styling from './Products.module.css'
 import ProductsChild from '../components/ProductsChild';
 
 
-function Products() {
+
+function Products(props) {
   const [productList, setProductList] = useState([]); //befinliga med API
 
 
@@ -25,7 +26,7 @@ function Products() {
 
   return (
       <div id={Styling.parentArticle}>
-      {productList.map(products => <ProductsChild key={products.id} products={products}/>
+      {productList.map(products => <ProductsChild key={products.id} products={products} addProduct={props.addProduct}/>
       )}
     </div>
   )

@@ -2,17 +2,7 @@ import React from 'react'
 
 function Checkout(props) {
 
-  const product = props.product;
 
-  console.log(product)
-  
-/*   const testProducts = {
-    
-    img: 'Image',
-    title: 'Product1',
-    price: '100' 
-
-  } */
 
   return (
   <div> 
