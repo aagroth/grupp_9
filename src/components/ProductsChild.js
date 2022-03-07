@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Styling from './ProductsChild.module.css'
+import { motion } from 'framer-motion'
+import Cart from './Cart'
+
 
 
 function ProductsChild(props) {
@@ -32,8 +35,8 @@ function ProductsChild(props) {
                     {props.products.price} :-
                 </p>
                 <form onSubmit={handleSubmit}>
-                    <Link to={`/products/${props.products.id}`}><button className={Styling.addToCartBtn}>Read more .. </button></Link>
-                    <button className={Styling.addToCartBtn}> ADD TO CART </button>
+                    <Link to={`/products/${props.products.id}`}><motion.button whileTap={{scale: 0.7}} className={Styling.addToCartBtn}>Read more .. </motion.button></Link>
+                    <motion.button whileTap={{scale: 0.8}} className={Styling.addToCartBtn}> ADD TO CART </motion.button>
                 </form>
             </article>
         </div>

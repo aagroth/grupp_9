@@ -26,7 +26,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header tasks={tasks} setTasks={setTasks} addProduct={addProduct} />
-
         <Routes>
           <Route path="/products/:id" element={<Product addProduct={addProduct} />} />
           <Route path="/" element={<Products addProduct={addProduct} />} />

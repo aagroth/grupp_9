@@ -1,6 +1,5 @@
 .Dropdown { /*  HELA  dropdown*/
-    position: relative;
-    display: inline-block;
+    position: absolute;
   }
   
   .showShoppingBag{ /*  STYLING VID ICONEN  dropbtn*/
@@ -9,16 +8,29 @@
     padding: 26px;
     border: none;
     cursor: pointer;
+    margin-top: -80%;
+    font-size: xx-large;
+}
+.shoppinBagTwo{
+    padding: 0 3px;
+    /* background-color: grey; IF DE ÄR NÅTT I KORGEN, ANIMERING KANSKE???? */
+    color: white;
+    font-weight: bolder;
+    border-radius: 5px;
+    position: relative;
+    top: -40px;
+    left: -25px;
+    z-index: 5232323;
 }
 
 .cartList{ /* STYLING PÅ LISTAN SOM SKAPAS dropdown-content*/
-    display: none;
-    position: absolute; 
+    position: relative;
+    font-size: x-small;
     background-color: lightblue;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     display: block;
-    width: 300px;
+    width: 400px;
     z-index: 1;
+
 }
 
 .picList{
@@ -27,9 +39,15 @@
 }
 
 
+.linkBtn{
+    position: absolute;
+}
 
-.Dropdown:hover .dropdown-content { /*  STYLING VID HOVER */
-    display: block;
-    padding: 5%;
-  }
-
+.deleteAll{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid white;
+}

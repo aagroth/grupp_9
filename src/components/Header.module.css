@@ -6,7 +6,7 @@ nav{
 }
 
 .nav_box{
-    width: 40%;
+    width: 50%;
     margin: auto;
     display: flex;
     align-items: center;
@@ -20,15 +20,13 @@ a:link{
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
+    border: 2px solid white;
 }
 
 a:visited{
     color: white;
 }
 
-a:hover{
-    font-size: x-large;
-}
 
 .shoppingBagOne{
     font-size: 2rem;
@@ -36,13 +34,15 @@ a:hover{
     cursor: pointer;
 }
 
-.shoppinBagTwo{
+/* .shoppinBagTwo{
     padding: 0 3px;
-    background-color: grey; /* IF DE ÄR NÅTT I KORGEN, ANIMERING KANSKE???? */
+    background-color: grey; 
     color: white;
     font-weight: bolder;
     border-radius: 5px;
     position: relative;
     top: -15px;
     cursor: pointer;
-}
+} */
+
+

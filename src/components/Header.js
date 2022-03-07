@@ -11,7 +11,7 @@ function Header(props) {
         <div>
             <nav>
                 <div className={Styling.nav_box}>
-                    <span className={Styling.links}>
+                    <span>
                         <Link to="/">Products</Link>     <Link to="/Checkout">Checkout</Link>
                     </span>
                     <span>
