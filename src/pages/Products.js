@@ -25,7 +25,7 @@ function Products(props) {
 
   return (
       <div id={Styling.parentArticle}>
-      {productList.map(products => <ProductsChild key={products.id} products={products} addProduct={props.addProduct} />
+      {productList.map(products => <ProductsChild key={products.id} products={products} addProduct={props.addProduct} count={props.count} setCount={props.setCount}  />
       )}
     </div>
   )

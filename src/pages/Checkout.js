@@ -2,7 +2,7 @@ import React from 'react'
 
 function Checkout(props) {
 
-  const deleteBtn = () => {
+  const deleteAllBtn = () => {
     props.setTasks([])
   }
 
@@ -29,7 +29,7 @@ function Checkout(props) {
     </table>
   ))}
 
-  <button onClick={deleteBtn}>Delete all</button>
+  <button onClick={deleteAllBtn}>Delete all</button>
 
   <table>
     <tr>

@@ -12,6 +12,7 @@ import Header from './components/Header';
 
 function App() {
   const [tasks, setTasks] = useState([]); //tom lista för varukorg
+  const [count, setCount] = useState(0); //räknar klicken i cart
 
 
   const addProduct = (newProduct) => {
@@ -21,26 +22,6 @@ function App() {
   ]);
 }
 
-/* 
-const addProduct = (newProduct) => {
-  const exist = tasks.find(task => task.id === newProduct.id);
-  if(exist) {
-    setTasks(tasks.map(task=> task.id === newProduct.id ? {...exist, qty: exist.qty +1} : task)
-    );
-  } else{
-    setTasks([...tasks, {...newProduct, qty:1}]);
-  }
-}
-
-const onRemove = ( newProduct ) => {
-  const exist = setTasks.find((task) => task.id === newProduct.id);
-  if(exist === 1){
-    setTasks(tasks.filter((task) => task.id !== newProduct.id));
-  }else{
-    setTasks([...tasks, {...newProduct, qty:1}]);
-  }
-}
- */
 
 
 
@@ -51,7 +32,7 @@ const onRemove = ( newProduct ) => {
         <Header tasks={tasks} setTasks={setTasks} addProduct={addProduct} />
         <Routes>
           <Route path="/products/:id" element={<Product addProduct={addProduct} />} />
-          <Route path="/" element={<Products addProduct={addProduct} />} />
+          <Route path="/" element={<Products addProduct={addProduct} count={count} setCount={setCount} />} />
           <Route path="/Checkout" element={<Checkout tasks={tasks} setTasks={setTasks} addProduct={addProduct} />} />
         </Routes>
 

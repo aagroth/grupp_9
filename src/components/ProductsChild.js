@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import Styling from './ProductsChild.module.css'
 import { motion } from 'framer-motion'
@@ -7,13 +7,13 @@ function ProductsChild(props) {
 
  const handleSubmit = (e) => {
         e.preventDefault();
-    const newProduct = {
-        id: props.products.id,
-        img: props.products.url,
-        title: props.products.title,
-        price: props.products.price
-      }
-    props.addProduct(newProduct);
+            const newProduct = {
+                id: props.products.id,
+                img: props.products.url,
+                title: props.products.title,
+                price: props.products.price
+            }
+        props.addProduct(newProduct);
     }
 
     
@@ -26,8 +26,9 @@ function ProductsChild(props) {
                     <br/>
                     {props.products.price} :-
                 </p>
-                <form onSubmit={handleSubmit}>
                 <Link to={`/products/${props.products.id}`}><motion.button whileTap={{scale: 0.7}} className={Styling.addToCartBtn}>Read more .. </motion.button></Link>
+                
+                <form onSubmit={handleSubmit}>
                 <motion.button whileTap={{scale: 0.8}} className={Styling.addToCartBtn} > ADD TO CART </motion.button>
                 
                 </form>
