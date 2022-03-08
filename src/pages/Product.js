@@ -7,6 +7,8 @@ function Product(props) {
   const [product, setProduct] = useState([]);
   const params = useParams();
 
+  let qty = 1
+
   const fetchData = async () => {
     try {
       const response = await fetch('https://codexplained.se/sportstuff.php' + "?id=" + params.id);
@@ -31,7 +33,8 @@ const handleSubmit = (e) => {
       id: product.id,
       img: product.url,
       title: product.title,
-      price: product.price
+      price: product.price,
+      qty: document.getElementById("quantity").value
     }
   props.addProduct(newProduct);
   console.log(newProduct)
@@ -52,7 +55,7 @@ const handleSubmit = (e) => {
       <h4>Available in stock: {product.storage}</h4>
 
       <form onSubmit={handleSubmit} className={Styling.quantityContainer}>
-        <input type="number" placeholder="Quantity" className={Styling.inputField}></input>
+        <input type="number" placeholder={qty} className={Styling.inputField} id="quantity"></input>
         <button className={Styling.submitBtn}>Add to cart</button>
       </form>
     </div>

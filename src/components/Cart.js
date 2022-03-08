@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 function Cart({ tasks }) {
-  const [showShoppingBag, setShoppingBag] = useState(true)
+  const [showShoppingBag, setShoppingBag] = useState(tasks)
 
   const deleteAll = () => {
   }
@@ -24,7 +24,7 @@ function Cart({ tasks }) {
               {task.title}{task.price} :-
               <span className={Styling.toCheckout}>
                 <br />
-                  <button className={deleteAll}> DELETE </button>
+                  <button className={deleteAll}>DELETE</button>
               </span>
               </div>))
           : null

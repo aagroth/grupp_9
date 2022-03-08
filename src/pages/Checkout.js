@@ -1,42 +1,67 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Styling from './Checkout.module.css'
 
 function Checkout(props) {
 
+  /* const [checkoutItems, setCheckoutItems] = useState(tasks);
+  console.log(checkoutItems)
+ */
+
   const deleteAllBtn = () => {
     props.setTasks([])
+  }
+
+  const orderBtn = () => {
+    props.setTasks([])
+    alert("Order sent!")
+  }
+
+  const deleteBtn = (id) => {
+    let arr = []
+    props.tasks.forEach((item) => {
+      if (item.id != id) {
+        arr.push(item)
+      } 
+    })
+    props.setTasks(arr) 
   }
 
   return (
   <div> 
 
   {props.tasks.map((checkoutItem) => (
+    <div key={checkoutItem.id} className={Styling.productContainer}>
+    
+    <img src={checkoutItem.img} alt={checkoutItem.title} className={Styling.imgStyling}></img>
+  
     <table>    
+    <tbody>
       <tr>
-        <th colSpan="4">Products</th>
+        <th className={Styling.textHeader}>Product</th>
+        <th className={Styling.textHeader}>Quantity</th>
+        <th className={Styling.textHeader}>Price</th>
       </tr>
+    
       <tr>
-        <th>Img</th>
-        <th>Title</th>
-        <th>Qty</th>
-        <th>Price</th>
-      </tr>
-      <tr>
-        <img src={checkoutItem.url} alt={checkoutItem.title}></img>
-        <td>{checkoutItem.title}</td>
-        <td>
-        <button>-</button>
-        <button>+</button>
+        <td className={Styling.textContainer}>{checkoutItem.title}</td>
+        <td className={Styling.qtyContainer}>
+        <button className={Styling.minusBtn}>-</button>
+        <p>{checkoutItem.qty}</p>
+        <button className={Styling.plusBtn}>+</button>
         </td>
-        <td>{checkoutItem.price}</td>
+        <td>{checkoutItem.price}:-</td>
       </tr>
-      <button onClick={() =>
-        props.setTasks((tasks) => tasks.filter((_, i) => i !== tasks.length - 1))}>Delete</button>
+      </tbody>
     </table>
+    <button className={Styling.deleteBtn} onClick={()=>deleteBtn(checkoutItem.id)}>Delete</button>
+    </div>
   ))}
-
-  <button onClick={deleteAllBtn}>Delete all</button>
-
+  
+  <hr />
+  
+  <div className={Styling.totalContainer}>
   <table>
+    <tbody>
     <tr>
       <th>Summa</th>
       <td>100</td>
@@ -49,9 +74,14 @@ function Checkout(props) {
       <th>Total</th>
       <td>100</td>
     </tr>
+    </tbody>
   </table>
+  </div>
     
-    <button>Place order</button>
+    <div className={Styling.btnContainer}>
+    <button onClick={deleteAllBtn} className={Styling.deleteAllBtn}>Delete all</button>
+    <button onClick={orderBtn} className={Styling.orderBtn}>Place order</button>
+    </div>
 
   </div>
   )
