@@ -3,10 +3,8 @@ import Styling from './Products.module.css'
 import ProductsChild from '../components/ProductsChild';
 
 
-function Products(props) {
+function Products() {
   const [productList, setProductList] = useState([]); //befinliga med API
-
-
 
 
   const fetchData = async () => {
@@ -23,11 +21,11 @@ function Products(props) {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [])
 
   return (
       <div id={Styling.parentArticle}>
-      {productList.map(products => <ProductsChild key={products.id} products={products} addProduct={props.addProduct} task={props.task} removeFromCart={props.removeFromCart}/>
+      {productList.map(products => <ProductsChild key={products.id} products={products}/>
       )}
     </div>
   )
