@@ -23,9 +23,14 @@ function Checkout(props) {
       <tr>
         <img src={checkoutItem.url} alt={checkoutItem.title}></img>
         <td>{checkoutItem.title}</td>
-        <td>Qty of products</td>
+        <td>
+        <button>-</button>
+        <button>+</button>
+        </td>
         <td>{checkoutItem.price}</td>
       </tr>
+      <button onClick={() =>
+        props.setTasks((tasks) => tasks.filter((_, i) => i !== tasks.length - 1))}>Delete</button>
     </table>
   ))}
 

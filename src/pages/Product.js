@@ -44,31 +44,15 @@ const handleSubmit = (e) => {
     </div>
 
     <div className={Styling.infoContainer}>
-      <table className={Styling.productInfo}>
-      <tbody>  
-        <tr className={Styling.innerContainer}>
-        <th>Product:</th>
-          <td>{product.title}</td>
-        </tr>
-        <tr>
-          <th>Price:</th>
-          <td>{product.price}:-</td>
-        </tr>
-        <tr>
-          <th>Stock:</th>
-          <td>{product.storage}</td>
-        </tr>
-        </tbody>   
-      </table>
-
-      <details className={Styling.detailInfo}>
-        <summary>Product Info</summary>
-        <p>{product.description}</p>
-      </details>
+     
+      <h1>{product.title}</h1>
+      <p>{product.description}</p>
+      <h3>{product.price}:-</h3>
+      <h4>Available in stock: {product.storage}</h4>
 
       <form onSubmit={handleSubmit} className={Styling.quantityContainer}>
-        <input type="number" placeholder="Quantity"></input>
-        <button className={Styling.submitBtn}>ADD TO CART</button>
+        <input type="number" placeholder="Quantity" className={Styling.inputField}></input>
+        <button className={Styling.submitBtn}>Add to cart</button>
       </form>
     </div>
   </div> 
