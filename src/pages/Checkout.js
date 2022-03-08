@@ -2,6 +2,10 @@ import React from 'react'
 
 function Checkout(props) {
 
+  const deleteBtn = () => {
+    props.setTasks([])
+  }
+
   return (
   <div> 
 
@@ -24,6 +28,8 @@ function Checkout(props) {
       </tr>
     </table>
   ))}
+
+  <button onClick={deleteBtn}>Delete all</button>
 
   <table>
     <tr>
