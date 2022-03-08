@@ -25,23 +25,23 @@ function Product(props) {
     fetchData();
   }, [] );
 
-const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const newProduct = {
-      id: product.id,
-      img: product.url,
-      title: product.title,
-      price: product.price,
-      qty: parseInt(document.getElementById(product.id + "-quantity").value)
-    }
-  props.addProduct(newProduct);
-  console.log(newProduct)
-  qty = 1;
-}
+    const newProduct = {
+        id: product.id,
+        img: product.url,
+        title: product.title,
+        price: product.price,
+        qty: parseInt(document.getElementById(product.id + "-quantity").value)
+      }
+    props.addProduct(newProduct);
+    console.log(newProduct)
+    qty = 1;
+  }
   
-  return (
-<div className={Styling.productCard} >
+return (
+  <div className={Styling.productCard} >
     
     <div className={Styling.imgContainer}>
       <img src={product.url} alt={product.title}></img>
@@ -59,6 +59,7 @@ const handleSubmit = (e) => {
         <button className={Styling.submitBtn}>Add to cart</button>
       </form>
     </div>
+    
   </div> 
   )
 }

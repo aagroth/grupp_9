@@ -1,8 +1,9 @@
 .productContainer {
     display: flex;
     flex-direction: row;                                            
-    justify-content: center;
+    justify-content: space-evenly;
     margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .imgStyling {
@@ -10,16 +11,25 @@
     height: 120px;
 }
 
-.textHeader {
-    padding-left: 100px;
+.textHeader, td {
+    padding: 0 50px 0 50px;
 }
 
-td {
-    padding-left: 100px;
+.textHeader, button {
+    margin-top: 30px;
+}
+
+.textHeader, p {
+    margin-top: 35px;
 }
 
 .qtyContainer {
-   margin-left: 20px;
+   display: flex;
+   flex-direction: row;
+}
+
+.qtyContainer, p {
+    font-size: large;
 }
 
 .minusBtn {
@@ -28,6 +38,7 @@ td {
     height: 30px;
     width: 30px;
     color: white;
+    margin-right: 5px;
 }
 
 .plusBtn {
@@ -46,7 +57,7 @@ td {
 
 .deleteBtn {
     height: 30px;
-    margin-top: 68px;
+    margin-top: 60px;
     margin-left: 50px;
     border: none;
     background-color: red;
@@ -56,29 +67,60 @@ td {
 .btnContainer {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 0;
 }
 
 .deleteAllBtn {
-    height: 30px;
+    height: 40px;
+    width: 100px;
     border: none;
     background-color: red;
     color: white;
 }
 
 .orderBtn {
-    height: 30px;
+    margin-left: 5px;
+    height: 40px;
+    width: 100px;
     border: none;
     background-color: green;
     color: white;
-    margin-left: 5px;
 
 }
 
 .totalContainer {
     display: flex;
     justify-content: center;
-    display: row;
-    text-align: left;
+    flex-direction: column;
     margin-top: 50px;
+}
+
+.totalSumText {
+    text-align: center;
+}
+
+.totalSum {
+    text-align: center;
+    margin-top: 0;
+}
+
+.emptyContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.emptyCheckout {
+    margin-right: 20px; 
+}
+
+.backToProducts {
+    margin-top: 17px;
+    height: 40px;
+    width: 100px;
+    border: none;
+    background-color: black;
+    color: white;
 }
