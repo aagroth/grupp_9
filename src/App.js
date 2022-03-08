@@ -21,6 +21,27 @@ function App() {
   ]);
 }
 
+/* 
+const addProduct = (newProduct) => {
+  const exist = tasks.find(task => task.id === newProduct.id);
+  if(exist) {
+    setTasks(tasks.map(task=> task.id === newProduct.id ? {...exist, qty: exist.qty +1} : task)
+    );
+  } else{
+    setTasks([...tasks, {...newProduct, qty:1}]);
+  }
+}
+
+const onRemove = ( newProduct ) => {
+  const exist = setTasks.find((task) => task.id === newProduct.id);
+  if(exist === 1){
+    setTasks(tasks.filter((task) => task.id !== newProduct.id));
+  }else{
+    setTasks([...tasks, {...newProduct, qty:1}]);
+  }
+}
+ */
+
 
 
 

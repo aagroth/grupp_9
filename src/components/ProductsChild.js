@@ -4,7 +4,6 @@ import Styling from './ProductsChild.module.css'
 import { motion } from 'framer-motion'
 
 function ProductsChild(props) {
-     
 
  const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,7 +16,7 @@ function ProductsChild(props) {
     props.addProduct(newProduct);
     }
 
-
+    
     return (
         <div>
             <article className={Styling.cardStyle}>
@@ -29,11 +28,20 @@ function ProductsChild(props) {
                 </p>
                 <form onSubmit={handleSubmit}>
                 <Link to={`/products/${props.products.id}`}><motion.button whileTap={{scale: 0.7}} className={Styling.addToCartBtn}>Read more .. </motion.button></Link>
-                    <motion.button whileTap={{scale: 0.8}} className={Styling.addToCartBtn}> ADD TO CART </motion.button>
+                <motion.button whileTap={{scale: 0.8}} className={Styling.addToCartBtn} > ADD TO CART </motion.button>
+                
                 </form>
+
             </article>
         </div>
     )
 }
 
 export default ProductsChild
+
+
+/* 
+
+onClick={() => props.setCount(props.count + 1)} 
+
+*/

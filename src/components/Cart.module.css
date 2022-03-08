@@ -13,9 +13,9 @@
 
 
 
-/* .shoppinBagTwo{
+.shoppinBagTwo{
     padding: 0 3px;
-
+    background-color: red;
     color: white;
     font-weight: bolder;
     border-radius: 5px;
@@ -23,7 +23,20 @@
     top: -40px;
     left: -25px;
     z-index: 5232323;
-} */
+} 
+
+.shoppinBagThree{
+ background-color: none;
+
+ padding: 0 3px;
+    color: white;
+    font-weight: bolder;
+    border-radius: 5px;
+    position: relative;
+    top: -40px;
+    left: -25px;
+    z-index: 5232323;
+}
 
 .cartList{ /* STYLING PÅ LISTAN SOM SKAPAS dropdown-content*/
 border: 1px solid black;
