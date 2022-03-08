@@ -1,6 +1,11 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+
 #parentArticle{
     display: grid;
     grid-template-columns: auto auto auto;
+    background-color: white;
 }
 
 

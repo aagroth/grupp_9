@@ -10,10 +10,12 @@ function Header(props) {
     return (
         <div>
             <nav>
-                <div className={Styling.nav_box}>
-                    <span>
+                <div className={Styling.nav_box} style={{textTransform: 'uppercase'}}>
+                    <span className={Styling.lands}>
                         <Link to="/">Products</Link>     <Link to="/Checkout">Checkout</Link>
-                    </span>
+                        </span>
+                        {} <input type="text" placeholder="Seach product .."></input>
+                    
                     <span>
                     <Cart tasks={props.tasks} setTasks={props.setTasks} addProduct={props.addProduct} />
                     </span>
