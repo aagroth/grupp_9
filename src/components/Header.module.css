@@ -46,6 +46,10 @@ nav{
     text-decoration: none;
 }
 
-.lands:hover{
-    text-shadow: 10px 10px 10px rgb(221, 221, 221);
+
+@media screen and (max-width:1024px) {
+    .inputField{
+        padding: 10px;
+        width: 500px;
+    }
 }
