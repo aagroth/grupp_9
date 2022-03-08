@@ -7,20 +7,21 @@ import Checkout from './pages/Checkout';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
-
-
-
 function App() {
   const [tasks, setTasks] = useState([]); //tom lista för varukorg
 
-
   const addProduct = (newProduct) => {
-  setTasks([
-    ...tasks, //en syssla i taget
-    newProduct
-  ]);
+    
+    const found = tasks.find(task => task.id === newProduct.id)
+    if (found === undefined) {
+      setTasks([
+        ...tasks, //en syssla i taget
+        newProduct
+      ]);
+    } else {
+      found.qty += newProduct.qty
+    }
 }
-
 
   return (
     <div className="App">

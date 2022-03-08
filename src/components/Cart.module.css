@@ -3,17 +3,17 @@
   }
   
   .showShoppingBag{ /*  STYLING VID ICONEN  dropbtn*/
-    background-color: lightblue;
-    color: white;
     padding: 26px;
     border: none;
     cursor: pointer;
-    margin-top: -80%;
+    margin-top: -50%;
     font-size: xx-large;
 }
+
+
 .shoppinBagTwo{
     padding: 0 3px;
-    /* background-color: grey; IF DE ÄR NÅTT I KORGEN, ANIMERING KANSKE???? */
+    background-color: red;
     color: white;
     font-weight: bolder;
     border-radius: 5px;
@@ -21,21 +21,44 @@
     top: -40px;
     left: -25px;
     z-index: 5232323;
+} 
+
+.listlist{ /* styling runt list arrayen */
+    background-color: white;
+    margin-top: -20px;
+    width: 350px;
+    max-height: 300px;
+    overflow-y: scroll;
 }
 
 .cartList{ /* STYLING PÅ LISTAN SOM SKAPAS dropdown-content*/
     position: relative;
     font-size: x-small;
-    background-color: lightblue;
     display: block;
-    width: 400px;
+    width: 300px;
     z-index: 1;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+}
 
+.cartListBottom{
+    border: 1px solid black;
+    font-size: x-small;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    padding: 5%;
+    margin-bottom: -40px;
+    background-image: linear-gradient(white, rgb(221, 221, 221));
 }
 
 .picList{
     width: 40px;
     height: 40px;
+    border: 1px solid black;
 }
 
 
@@ -43,11 +66,17 @@
     position: absolute;
 }
 
-.deleteAll{
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    border: 2px solid white;
+.noList{
+    display: hidden;
+}
+
+@media screen and (max-width:1024px) {
+    .showShoppingBag{ /*  STYLING VID ICONEN  dropbtn*/
+        margin-left: -80px;
+        padding: 26px;
+        border: none;
+        cursor: pointer;
+        margin-top: -45%;
+        font-size: x-large;
+    }
 }

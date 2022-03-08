@@ -3,10 +3,6 @@ import Styling from './Checkout.module.css'
 
 function Checkout(props) {
 
-  /* const [checkoutItems, setCheckoutItems] = useState(tasks);
-  console.log(checkoutItems)
- */
-
   const deleteAllBtn = () => {
     props.setTasks([])
   }
@@ -24,7 +20,41 @@ function Checkout(props) {
       } 
     })
     props.setTasks(arr) 
+    console.log(arr)
   }
+
+  let totalSum = 0;
+
+  const productSum = () => {
+    props.tasks.forEach((item) => {
+      totalSum += item.price * item.qty 
+    })
+  }
+
+  productSum();
+
+  const minusBtn = (id) => {
+    const newTasks = [...props.tasks]
+    const found = newTasks.find(task => task.id === id)
+    console.log(found)
+    if (found != undefined && found.qty > 1) {
+      found.qty -= 1  
+      props.setTasks(newTasks) 
+    }
+    console.log(newTasks)
+  }
+
+  const plusBtn = (id) => {
+    const newTasks = [...props.tasks]
+    const found = newTasks.find(task => task.id === id)
+    console.log(found)
+    if (found != undefined) {
+      found.qty += 1   
+      props.setTasks(newTasks)
+    }
+    console.log(newTasks)
+  }
+  
 
   return (
   <div> 
@@ -45,9 +75,9 @@ function Checkout(props) {
       <tr>
         <td className={Styling.textContainer}>{checkoutItem.title}</td>
         <td className={Styling.qtyContainer}>
-        <button className={Styling.minusBtn}>-</button>
+        <button className={Styling.minusBtn} onClick={()=>minusBtn(checkoutItem.id)}>-</button>
         <p>{checkoutItem.qty}</p>
-        <button className={Styling.plusBtn}>+</button>
+        <button className={Styling.plusBtn} onClick={()=>plusBtn(checkoutItem.id)}>+</button>
         </td>
         <td>{checkoutItem.price}:-</td>
       </tr>
@@ -64,15 +94,7 @@ function Checkout(props) {
     <tbody>
     <tr>
       <th>Summa</th>
-      <td>100</td>
-    </tr>
-    <tr>
-      <th>Frakt</th>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>Total</th>
-      <td>100</td>
+      <td>{totalSum}</td>
     </tr>
     </tbody>
   </table>

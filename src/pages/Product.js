@@ -21,10 +21,9 @@ function Product(props) {
     }
   };
 
-  useEffect( () => {
-    
-    fetchData()
-}, []);
+  useEffect(() => {
+    fetchData();
+  }, [] );
 
 const handleSubmit = (e) => {
   e.preventDefault();
@@ -34,10 +33,11 @@ const handleSubmit = (e) => {
       img: product.url,
       title: product.title,
       price: product.price,
-      qty: document.getElementById("quantity").value
+      qty: parseInt(document.getElementById(product.id + "-quantity").value)
     }
   props.addProduct(newProduct);
   console.log(newProduct)
+  qty = 1;
 }
   
   return (
@@ -55,7 +55,7 @@ const handleSubmit = (e) => {
       <h4>Available in stock: {product.storage}</h4>
 
       <form onSubmit={handleSubmit} className={Styling.quantityContainer}>
-        <input type="number" placeholder={qty} className={Styling.inputField} id="quantity"></input>
+        <input type="number" defaultValue={qty} className={Styling.inputField} id={product.id + '-quantity'}></input>
         <button className={Styling.submitBtn}>Add to cart</button>
       </form>
     </div>
