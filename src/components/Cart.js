@@ -8,12 +8,12 @@ function Cart({ tasks, setTasks }) {
   const [showShoppingBag, setShoppingBag] = useState(true)
 
 
-  const deleteAllBtn = () => {
-    setTasks([])
-  }
+    const deleteAllBtn = () => {
+      setTasks([])
+    } 
 
 
-
+  console.log(tasks)
 
   return (
     <div className={Styling.Dropdown}>
@@ -21,17 +21,22 @@ function Cart({ tasks, setTasks }) {
 
       {
         showShoppingBag
-          ? tasks.map(task => (
-            <div className={Styling.cartList}
-              key={task.id}>
-              <img className={Styling.picList} src={task.img} alt={task.title}></img>
-              { } {task.title} { }
-              <p style={{ fontWeight: 'bold' }}>
-                {task.price} :-
-              </p>
-            </div>))
-          : <div className={Styling.cartList}>{tasks.length === 0 && <div> Cart is empty! </div>}</div>
+          ? <div className={Styling.listlist}>
+            {tasks.map(task => (
+              <span className={Styling.cartList}
+                key={task.id}>
+                <img className={Styling.picList} src={task.img} alt={task.title}></img>
+                { } {task.title} { }
+                <p style={{ fontWeight: 'bold' }}>
+                  {task.price} :-
+                </p>
+              </span>
+            ))}
+          </div>
+          
+          :null
       }
+
     </div>
   )
 }
@@ -44,5 +49,7 @@ count === 0
                   : <button disabled={false} onClick={() => setCount(count - 1)}> - </button>
               }
               
+
+              <div className={Styling.cartList}>{tasks.length === 0 && <div> Cart is empty! </div>}</div>
               
               */

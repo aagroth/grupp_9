@@ -1,6 +1,6 @@
 nav{
     width: 100%;
-    height: 70px;
+    height: 80px;
     background-image: linear-gradient(white, rgb(221, 221, 221));
     border: 1px solid rgb(221, 221, 221);
 }
@@ -22,20 +22,30 @@ nav{
   color: black;
 }
 
-link{
-    justify-content: space-between;
-    box-shadow: 10px 10px 10px rgb(221, 221, 221);
+
+
+.FaSearch{
+    margin-left: 22.3%;
+    position: absolute;
+    border: 1px black solid;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(231, 229, 229);
 }
 
-/* .shoppingBagOne{
-    font-size: 2rem;
-    cursor: pointer;
-} */
+.FaSearch:hover{
+    background-color: rgb(192, 192, 192);
+}
+
+.inputField{
+    padding: 10px;
+}
+
+.lands{
+    color: black;
+    text-decoration: none;
+}
 
 .lands:hover{
     text-shadow: 10px 10px 10px rgb(221, 221, 221);
 }
-
-
-
-

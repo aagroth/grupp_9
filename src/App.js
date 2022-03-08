@@ -16,31 +16,31 @@ function App() {
 
 
   const addProduct = (newProduct) => {
-  setTasks([
-    ...tasks, //en syssla i taget
-    newProduct
-  ]);
-}
+    setTasks([
+      ...tasks, //en syssla i taget
+      newProduct
+    ]);
+  }
 
 
 
 
+return (
+  <div className="App">
+    <BrowserRouter>
+      <Header tasks={tasks} setTasks={setTasks} addProduct={addProduct} />
+      <Routes>
+        <Route path="/products/:id" element={<Product addProduct={addProduct} />} />
+        <Route path="/" element={<Products addProduct={addProduct} count={count} setCount={setCount} />} />
+        <Route path="/Checkout" element={<Checkout tasks={tasks} setTasks={setTasks} addProduct={addProduct} />} />
+      </Routes>
 
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Header tasks={tasks} setTasks={setTasks} addProduct={addProduct} />
-        <Routes>
-          <Route path="/products/:id" element={<Product addProduct={addProduct} />} />
-          <Route path="/" element={<Products addProduct={addProduct} count={count} setCount={setCount} />} />
-          <Route path="/Checkout" element={<Checkout tasks={tasks} setTasks={setTasks} addProduct={addProduct} />} />
-        </Routes>
+      <Footer />
+    </BrowserRouter>
 
-        <Footer />
-      </BrowserRouter>
-
-    </div>
-  );
+  </div>
+);
 }
 
 export default App;
+

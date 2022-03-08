@@ -2,19 +2,23 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Styling from './Header.module.css'
 import Cart from './Cart'
+import { FaSearch } from 'react-icons/fa'
 
 function Header(props) {
-
-    
+    const imSorry = () => {
+        alert("This item is out of stock, please try again later!")
+    }
 
     return (
         <div>
             <nav>
                 <div className={Styling.nav_box} style={{textTransform: 'uppercase'}}>
-                    <span className={Styling.lands}>
-                        <Link to="/">Products</Link>     <Link to="/Checkout">Checkout</Link>
-                        </span>
-                        {} <input type="text" placeholder="Seach product .."></input>
+                    <div className={Styling.lands}>
+                        <Link to="/" style={{}}>Products</Link>     <Link to="/Checkout">Checkout</Link>
+                        </div>
+
+                        <input className={Styling.inputField} type="text" placeholder="Seach product .."></input>
+                        <FaSearch className={Styling.FaSearch} onClick={imSorry} />
                     
                     <span>
                     <Cart tasks={props.tasks} setTasks={props.setTasks} addProduct={props.addProduct} />
