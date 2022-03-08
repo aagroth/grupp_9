@@ -2,7 +2,7 @@ import React from 'react'
 
 function Checkout(props) {
 
-  const deleteBtn = () => {
+  const deleteAllBtn = () => {
     props.setTasks([])
   }
 
@@ -23,13 +23,18 @@ function Checkout(props) {
       <tr>
         <img src={checkoutItem.url} alt={checkoutItem.title}></img>
         <td>{checkoutItem.title}</td>
-        <td>Qty of products</td>
+        <td>
+        <button>-</button>
+        <button>+</button>
+        </td>
         <td>{checkoutItem.price}</td>
       </tr>
+      <button onClick={() =>
+        props.setTasks((tasks) => tasks.filter((_, i) => i !== tasks.length - 1))}>Delete</button>
     </table>
   ))}
 
-  <button onClick={deleteBtn}>Delete all</button>
+  <button onClick={deleteAllBtn}>Delete all</button>
 
   <table>
     <tr>

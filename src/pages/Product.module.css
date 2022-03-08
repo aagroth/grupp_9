@@ -4,6 +4,9 @@
     justify-content: center;
     margin-top: 100px;
     margin-bottom: 100px;
+    margin: 50px 300px 50px 300px;
+    background-color: white;
+    padding: 150px 250px 150px 250px;
 }
 
 .imgContainer {
@@ -12,6 +15,7 @@
 
 .infoContainer {
     margin-right: 100px;
+    margin-top: -20px;
 }
 
 .infoContainer {
@@ -20,25 +24,19 @@
     justify-content: center;
 }
 
-.innerContainer {
+.quantityContainer {
     display: flex;
     flex-direction: row;
 }
 
-.quantityContainer {
-    display: flex;
-    flex-direction: column;
-}
-
-.productInfo {
-    display: flex;
-    flex-direction: column;
-}
-
-.detailInfo {
-
+.inputField {
+    border-radius: 5px;
+    height: 30px;
 }
 
 .submitBtn {
-
+    border-radius: 5px;
+    background-color: green;
+    margin-left: 5px;
+    color: white;
 }
