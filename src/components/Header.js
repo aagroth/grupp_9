@@ -12,20 +12,19 @@ function Header(props) {
     return (
         <div>
             <nav>
-                <div className={Styling.nav_box} style={{textTransform: 'uppercase'}}>
-                    <div className={Styling.lands}>
-                        <Link to="/" style={{}}>Products</Link>     <Link to="/Checkout">Checkout</Link>
-                        </div>
-
-                        <input className={Styling.inputField} type="text" placeholder="Seach product .."></input>
-                        <FaSearch className={Styling.FaSearch} onClick={imSorry} />
-                    
+                <div className={Styling.nav_box} style={{ textTransform: 'uppercase' }}>
                     <span>
-                    <Cart tasks={props.tasks} setTasks={props.setTasks} addProduct={props.addProduct} />
+                        <Cart tasks={props.tasks} setTasks={props.setTasks} addProduct={props.addProduct} />
                     </span>
+
+                    <input className={Styling.inputField} type="text" placeholder="Seach product .."></input>
+                    <FaSearch className={Styling.FaSearch} onClick={imSorry} />
+                    <div className={Styling.lands}>
+                        <Link to="/" style={{textDecoration: 'none',color: 'black', fontWeight: 'bold'}}>Products</Link>   /    <Link to="/Checkout" style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold'}}>Checkout</Link>
+                    </div>
                 </div>
             </nav>
-            
+
         </div>
     )
 }
