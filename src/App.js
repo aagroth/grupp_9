@@ -11,7 +11,6 @@ function App() {
   const [tasks, setTasks] = useState([]); //tom lista för varukorg
 
   const addProduct = (newProduct) => {
-    
     const found = tasks.find(task => task.id === newProduct.id)
     if (found === undefined) {
       setTasks([

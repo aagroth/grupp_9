@@ -10,23 +10,10 @@
     font-size: xx-large;
 }
 
-
-.shoppinBagTwo{
-    padding: 0 3px;
-    background-color: red;
-    color: white;
-    font-weight: bolder;
-    border-radius: 5px;
-    position: relative;
-    top: -40px;
-    left: -25px;
-    z-index: 5232323;
-} 
-
 .listlist{ /* styling runt list arrayen */
     background-color: white;
     margin-top: -20px;
-    width: 350px;
+    width: 520px;
     max-height: 300px;
     overflow-y: scroll;
 }
@@ -35,7 +22,7 @@
     position: relative;
     font-size: x-small;
     display: block;
-    width: 300px;
+    width: 450px;
     z-index: 1;
     padding: 5%;
     display: flex;
@@ -44,33 +31,15 @@
     border-bottom: 1px solid lightgrey;
 }
 
-.cartListBottom{
-    border: 1px solid black;
-    font-size: x-small;
+.picList{ /*  små miniatyrbildeer i cart*/
     position: absolute;
-    width: 300px;
-    height: 50px;
-    padding: 5%;
-    margin-bottom: -40px;
-    background-image: linear-gradient(white, rgb(221, 221, 221));
-}
-
-.picList{
-    width: 40px;
-    height: 40px;
+    margin-left: -15px;
+    width: 60px;
+    height: 60px;
     border: 1px solid black;
 }
 
-
-.linkBtn{
-    position: absolute;
-}
-
-.noList{
-    display: hidden;
-}
-
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1024px) { /* mediscreen för headern */
     .showShoppingBag{ /*  STYLING VID ICONEN  dropbtn*/
         margin-left: -80px;
         padding: 26px;
@@ -79,4 +48,76 @@
         margin-top: -45%;
         font-size: x-large;
     }
+}
+
+.totalContainer{ /* totalsumma, knappar + i CART  */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.deleteAllBtn{ /* delete alla  */
+    width: 80px;
+    height: 60px;
+}
+
+.toCheckout{ /* till checkout button */
+    width: 80px;
+    height: 60px;
+    margin-left: 110px;
+}
+
+
+.titleList{ /* title i CART */
+    position: absolute;
+    margin-left: 60px;
+    margin-top: 12px;
+    height: 60px;
+    font-size: xx-small;
+}
+
+.minusBtn{ /* minus qty button */
+    position: absolute;
+    border: 1px solid rgb(209, 0, 0);
+    background-color: red;
+    height: 30px;
+    width: 30px;
+    margin-left: 325px;
+    margin-top: 5px;
+}
+
+.plusBtn{ /* plus qty button */
+    position: absolute;
+    border: 1px solid rgb(0, 94, 0);
+    background-color: green;
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+    margin-left: 360px;
+}
+
+.deleteBtn{ /* delete en och en i cart */
+    position: absolute;
+    height: 30px;
+    width: 60px;
+    margin-top: 5px;
+    background-color: lightgrey;   
+    border: 1px solid rgb(109, 109, 109);
+    margin-left: 395px;
+}
+
+.qty{ /* style för qty i cart */
+    position: absolute;
+    margin-left: 300px;
+    font-size: s;
+    margin-top: 20px;
+    padding: 2%;
+}
+
+.priceTag{/* style för priset i cart */
+    position: absolute;
+    margin-left: 265px;
+    margin-top: 18px;
+    font-size: small;
 }

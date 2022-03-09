@@ -7,7 +7,7 @@ function Products(props) {
   const [productList, setProductList] = useState([]); //befinliga med API
 
 
-  const fetchData = async () => {
+  const fetchData = async () => { /* hämtar API och spara i productList */
     try {
       const response = await fetch('https://codexplained.se/sportstuff.php');
       const data = await response.json();
@@ -24,7 +24,7 @@ function Products(props) {
   }, [])
 
   return (
-      <div id={Styling.parentArticle}>
+      <div id={Styling.parentArticle}> {/* mapa genom productList och skicka vodare innehållet till productChild */}
       {productList.map(products => <ProductsChild key={products.id} products={products} addProduct={props.addProduct} count={props.count} setCount={props.setCount}  />
       )}
     </div>
