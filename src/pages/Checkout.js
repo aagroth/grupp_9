@@ -4,15 +4,21 @@ import { Link } from 'react-router-dom'
 
 function Checkout(props) {
 
+  // Tömmer hela listan "tasks" i app.js med hjälp av att den ersätter den 
+  // gamla listan med en ny tom array, genom setTasks.
   const deleteAllBtn = () => {
     props.setTasks([])
   }
 
+  // Gör samma som deleteAllBtn funktionen
   const orderBtn = () => {
     props.setTasks([])
     alert("Order sent!")
   }
 
+  // Tar in id från checkoutItems och loopar igenom listan tasks från App.js.
+  // Sedan jämförs id från checkoutItems med id från tasks.
+  // Matchas id så tas produkten bort från listan "tasks" i App.js
   const deleteBtn = (id) => {
     let arr = []
     props.tasks.forEach((item) => {
@@ -23,9 +29,10 @@ function Checkout(props) {
     props.setTasks(arr) 
     console.log(arr)
   }
-  // If no products is added to the Checkout the totalSum will be 0
+  // Om inga produkter är tillagda i listan "tasks" så är totalSum 0
   let totalSum = 0;
   
+  // Loopar igenom produkt för produkt och gångrar pris med qty och ger ut värdet till totalSum
   const productSum = () => {
     props.tasks.forEach((item) => {
       totalSum += item.price * item.qty 
@@ -34,6 +41,9 @@ function Checkout(props) {
 
   productSum();
 
+  // Går in i tasks, sedan jämförs lokala idt(task) med id från tasks.
+  // Ifall idt matchar så tas 1 bort från qty.
+  // I if-satsen så tvingar även funktionen att värdet måste vara minst 1.
   const minusBtn = (id) => {
     const newTasks = [...props.tasks]
     const found = newTasks.find(task => task.id === id)
@@ -44,7 +54,7 @@ function Checkout(props) {
     }
     console.log(newTasks)
   }
-  // 
+  // Samma som minusBtn men med skillnaden att funktionen adderar 1 istället för att tar bort 1
   const plusBtn = (id) => {
     const newTasks = [...props.tasks]
     const found = newTasks.find(task => task.id === id)
@@ -59,6 +69,8 @@ function Checkout(props) {
 
   return (
   <div> 
+    {/* Här kollar vi ifall "tasks" från App.js är tom med hjälp av length */}
+    {/* Ifall listan är tom så skrivs text och knapp ut */}
     <div>{props.tasks.length === 0 && 
       <div className={Styling.emptyContainer}>
       <h2 className={Styling.emptyCheckout}>Checkout is empty</h2>

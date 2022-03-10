@@ -8,13 +8,17 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 
 function App() {
-  const [tasks, setTasks] = useState([]); //tom lista för varukorg
+  // Listan tasks innehar produkterna som ska visas i Checkout och Cart
+  // Med hjälp av funktionerna i både Checkout och Cart så manipuleras sedan listan.
+  const [tasks, setTasks] = useState([]); 
 
+  // funktion som går först går igenom så att produkt för att se ifall den redan existerar i listan tasks
+  // Existerar produkten så läggs endast antalet(qty) till på befintlig produkt. Annars skapas en ny.
   const addProduct = (newProduct) => {
     const found = tasks.find(task => task.id === newProduct.id)
     if (found === undefined) {
       setTasks([
-        ...tasks, //en syssla i taget
+        ...tasks, // En produkt i taget
         newProduct
       ]);
     } else {

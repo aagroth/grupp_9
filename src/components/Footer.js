@@ -26,7 +26,7 @@ function Footer() {
 
 export default Footer
 
-// Styled components for Footer
+// Styled components för Footer
 
 const StyledContainer = styled.div`
 display: flex;
